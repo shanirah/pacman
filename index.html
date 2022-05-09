@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./jquery-3.4.1.slim.min.js"></script>
+		<script type="text/javascript" src="./app.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<div class="menu">
+			<a class="menu active" onclick="showWelcomeScreen()">Welcome </a>
+			<a class="menu"onclick="showRegisterScreen()">Register</a>
+			<a class="menu" onclick="showLoginScreen()">Login</a>
+			<a class="menu" onclick="showSettingScreen()">Settings</a>
+			<a class="menu" id="aboutModal" onclick="document.getElementById('id01').style.display='block'">About</a>
+		  </div>
+    	<audio id="audio" src="resources/sounds/pacman.mp3"></audio>
+		<div class="content" >
+			<div class="screen" id="welcomeScreen">
+				<input type="image" id="background" src="resources/welcome_screen/BACKGROUND_NO_BUTTONS_NO_LOGO.png">
+				<input type="image" id="loginClick" src="resources/welcome_screen/BUTTON_LOGIN_PRESSED.png" onclick="showLoginScreen()">
+				<input type="image" id="loginHover" src="resources/welcome_screen/BUTTON_LOGIN_HOVER.png" onclick="showLoginScreen()">
+				<input type="image" id="login" src="resources/welcome_screen/BUTTON_LOGIN_REGULAR.png" onclick="showLoginScreen()">
+				<input type="image" id="registerClick" src="resources/welcome_screen/BUTTON_REGISTER_PRESSED.png" onclick="showRegisterScreen()">
+				<input type="image" id="registerHover" src="resources/welcome_screen/BUTTON_REGISTET_HOVER.png" onclick="showRegisterScreen()">
+				<input type="image" id="register" src="resources/welcome_screen/BUTTON_REGISTER_REGULAR.png" onclick="showRegisterScreen()">
+				<input type="image" id="logoBlink" src="resources/welcome_screen/PACMAN_LOGO_HOVER.png">
+				<input type="image" id="logo" src="resources/welcome_screen/PACMAN_LOGO.png">
+			</div>
+			<div class="screen" id="registerScreen">
+				<form action="action_page.php" method="post">
+					<h1>register:</h1>
+					<div class="container">
+					  <label2 for="uname"><b>Username</b></label2>
+					  <input type="uname" placeholder="Enter Username" name="uname" required>
+				  
+					  <label2 for="psw"><b>Password</b></label2>
+					  <input type="psw" placeholder="Enter Password" name="psw" required>
+					
+					  <label2 for="psw"><b>fullname</b></label2>
+					  <input type="fullname" placeholder="Enter Full Name" name="psw" required>
+
+					  <label2 for="email"><b>Email</b></label2>
+					  <input type="email" placeholder="Enter E-mail" name="psw" required>
+
+					  <label2 for="psw"><b>Birth-Date:</b></label2>
+					  <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+					  
+	
+					  <br>
+					  <button type="reg" id="regButton">Register</button>
+					  <br>
+						<input type="checkbox" checked="checked" name="remember"> Remember me
+					  
+					  
+
+					</div>
+					<div class="imgcontainer2">
+						<img src="https://media0.giphy.com/media/hkqefnFjn2MWVl6xvq/200w.webp?cid=ecf05e4761q3yej93wmphwdfhvpvq8f3eq08gqbaeue7thtv&rid=200w.webp&ct=g" alt="Avatar2" class="avatar2">
+					  </div>
+				  
+				  </form>
+
+
+			</div>
+			<div id="id01" class="modal">
+				<span onclick="document.getElementById('id01').style.display='none'"
+			  class="close" title="Close Modal">&times;</span>
+			  
+				<!-- Modal Content -->
+				<form class="modal-content animate" action="/action_page.php">
+				  
+			  
+				  <div class="container">
+					
+
+				  </div>
+			  
+				</form>
+			  </div>
+			<div class="screen" id="loginScreen">
+				<form action="action_page.php" method="post">
+					<h1>log in:</h1>
+					<div class="container">
+					  <label1 for="uname"><b>Username</b></label1>
+					  <input type="text1" placeholder="Enter Username" name="uname" required>
+				  
+					  <label1 for="psw"><b>Password</b></label1>
+					  <input type="password" placeholder="Enter Password" name="psw" required>
+					</br>
+					</br>
+					  <button type="submit" onClick="showSettingsScreen()">Login</button>
+					  <label1>
+						<input type="checkbox" checked="checked" name="remember"> Remember me
+					  </label1>
+					</div>
+					<div class="imgcontainer">
+						<img src="https://media.giphy.com/media/gYWeVOiMmbg3kzCTq5/giphy.gif" alt="Avatar" class="avatar">
+					  </div>
+				  
+				  </form>
+			</div>
+			<div class="screen" id="settingsScreen">
+				<h3>SETTINGS</h3>
+				Select a direction and then press the desired key: <br/>
+				<input type="button" class="keyboard" id="up" onclick="upButton()" value="^"><br/>
+				<input type="button" class="keyboard" id="left" onclick="leftButton()" value="<">
+				<input type="button" class="keyboard" id="down" onclick="downButton()" value="V">
+				<input type="button" class="keyboard" id="right" onclick="rightButton()" value=">"><br/>
+				number of balls: <br/>
+				<input type="range" id="balls" value="50" name="quantity" min="50" max="90" oninput="this.nextElementSibling.value = this.value">
+				<output>50</output><br/>
+				choose balls color: <br/>
+				5 points ball
+				choose color <input type="color" id="firstColorPicker" value="#0000ff">
+				<br/> 15 points ball 
+				choose color <input type="color" id="secondColorPicker" value="#0000ff">
+				<br/> 25 points ball
+				choose color <input type="color" id="thirdColorPicker" value="#0000ff"> <br/>
+				game time: <br/>
+				<input type="range" id="gameTime" value="60" min="60" max="120" oninput="this.nextElementSibling.value = this.value">
+				<output>60</output><br/>
+				number of ghosts: <br/>
+				<input type="range" id="numGhost" value="1" min="1" max="4" oninput="this.nextElementSibling.value = this.value">
+				<output>1</output><br/>
+				<button id ="ready" onclick="readyButton()">ready!</button>
+				<button id ="randomChoose" onclick="randomChoose()">choose for me!</button>
+			</div>
+			<div class="screen" id="game">
+				<canvas id="canvas" height="600" width="1200"></canvas>
+				<div id="score">
+					<label for="lblScore">SCORE:</label>
+					<input id="lblScore" type="text" />
+				</div>
+				<div id="lives">
+					<label for="lblLives">LIVES:</label>
+					<input id="lblLives" type="text" />
+				</div>	
+				<div id="time">
+					<label for="lblTime">TIME:</label>
+					<input id="lblTime" type="text" />
+				</div>
+			</div>
+		</div>
+		<div class="modal">
+  			<div class="modal-content">
+    		<span class="close-btn">&times;</span>
+    		<p>this is the text inside the modal</p>
+  			</div>
+		</div>	
+
+	</body>
+</html>

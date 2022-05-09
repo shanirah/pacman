@@ -1,0 +1,399 @@
+.menu {
+    background-color: blue;
+    overflow: hidden;
+  }
+  
+  .menu a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "ＭＳ Ｐゴシック";
+  }
+  
+  .menu a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .menu a.active {
+    background-color: yellow;
+    color: white;
+  }
+
+
+  .modal {
+    display: none;
+    position: fixed; 
+    padding-top: 50px;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    position: relative; 
+    background-color: rgb(199, 162, 218);
+    border-radius: 25px;
+    border: 6px solid rgb(240, 235, 243);
+    padding: 20px; 
+    margin: auto; 
+    width: 75%;  
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  .close-btn {
+    float: right; 
+    color: rgb(255, 255, 255); 
+    font-size: 30px;  
+    font-weight: bold;
+  }
+  .close-btn:hover {
+    color: rgba(209, 0, 220, 0.16);
+  }
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    margin-right: 15px;
+    width: 200px;
+    height: 7px;
+    border-radius: 5px;
+    background-image: linear-gradient(rgb(213, 203, 218), rgb(199, 162, 218));
+    background-size: 70% 100%;
+  }
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #873a8d;
+    cursor: ew-resize;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  #canvas {
+    background-color: rgb(18, 15, 15);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;   
+    bottom: 0;
+    width: 87%;
+    height: 100%;
+  }
+
+  #score{
+    position: absolute ;  
+    width: 100px;
+    left:87%;
+    font-family: Roboto, sans-serif;
+  }
+
+  #lives{
+    position: absolute ;  
+    width: 100px;
+    left:87%;
+    top: 17%;
+    font-family: Roboto, sans-serif;
+  }
+
+  #time{
+    position: absolute ;  
+    width: 100px;
+    left:87%;
+    top: 32%;
+    font-family: Roboto, sans-serif;
+  }
+
+  .keyboard {
+    display: inline-block;
+    padding: 8px 10px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .keyboard:hover {background-color: #3e8e41}
+  
+  .keyboard:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  #up{
+      margin-left: 40px;
+  }
+
+  #background {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  /* Style the button and place it in the middle of the container/image */
+  #login {
+    position: absolute;
+    height: 15%;
+    top: 60%;
+    left: 55%;
+    cursor: pointer;
+  }
+
+  #login:hover{
+    display: none;
+  }
+
+  #registerHover{
+    position: absolute;
+    height: 15%;
+    top: 60%;
+    left:30%;
+    cursor: pointer;  
+  }
+  
+
+  #register {
+    position: absolute;
+    height: 15%;
+    top: 60%;
+    left: 30%;
+    cursor: pointer;
+  }
+
+  #register:hover{
+    display: none;
+  }
+
+  #loginHover{
+    position: absolute;
+    height: 15%;
+    top: 60%;
+    left:55%;
+    cursor: pointer;  
+  }
+
+  #logoBlink{
+    position: absolute;
+    height: 35%;
+    top: 15%;
+    left:15%;
+    cursor: pointer;  
+  }
+
+
+  #logo{
+    position: absolute;
+    height: 35%;
+    top: 15%;
+    left:15%;
+    cursor: pointer;  
+  }
+
+
+  #logo:hover{
+    display: none;
+  }
+
+  /* .screen class applies to all screens */
+.screen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    height: calc(100vh - 4.5em); /* height of viewport minus height of #navigation menu */
+    padding: 20px 10px;
+    overflow: auto;
+    border: 1px solid #888888;
+    overflow: hidden;
+    /* can add other CSS for all screens, such as background-color, etc. */ 
+  }
+
+/* show welcome screen when app first starts */
+#welcomeScreen {
+	display: block;
+    background-color: black;
+}
+
+/* hide other screens when app first starts */
+#registerScreen, #loginScreen, #settingsScreen, #game{
+	display: none;
+}
+
+
+
+#loginScreen, #registerScreen{
+  background-color: black;
+}
+
+
+form {
+  color: white;
+  background-color:black;
+  align-items: center;
+}
+
+/* Full-width inputs */
+input[type=text1], input[type=password] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: blue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  margin: 24px 0 12px 0;
+  position: absolute;
+  top: 5%;
+  left: 35%;
+}
+
+
+#imgcontainer2{
+  margin: 24px 0 12px 0;
+  position: absolute;
+  left:50%;
+}
+img.avatar2 {
+  width: 60%;
+  position: absolute;
+  left:17%;
+  top:0%;
+}
+/* Avatar image */
+img.avatar {
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+
+
+label1 {
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input1,
+label1 {
+  margin: .4rem 0;
+}
+
+label2 {
+  position: relative;
+  display: block;
+  font: 1rem 'Fira Sans', sans-serif;
+
+}
+#start{ 
+  width:14.7%;
+text-align: left;
+}
+#regButton{ 
+  width:15%;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5px auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
